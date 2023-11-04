@@ -1,4 +1,6 @@
-FROM openjdk:8
-EXPOSE 8080
-ADD target/cicd-for-webapp.jar cicd-for-webapp.jar
-ENTRYPOINT ["java","-jar","cicd-for-webapp.jar"]
+# Pull base image
+From tomcat:8-jre8
+
+# Maintainer
+MAINTAINER "bharathreddyv88@gmail.com"
+COPY ./cicd-for-webapp.war /usr/local/tomcat/webapps
